@@ -20,12 +20,15 @@ int main()
 {
   PostingList p1{1, 2, 4, 11, 31, 45, 173, 174};
   PostingList p2{2, 31, 54, 101};
+  PostingList p3{1, 2, 4, 5, 6, 16, 57, 132};
 
   PrintPostingList("PostingList1", p1);
   PrintPostingList("PostingList2", p2);
+  PrintPostingList("PostingList3", p3);
 
+  std::vector<PostingList> posting_lists{p1, p2, p3};
   PostingList result;
-  intersect(p1, p2, result);
+  intersect(posting_lists, result);
 
   PrintPostingList("Result", result);
 
